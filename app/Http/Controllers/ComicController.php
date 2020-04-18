@@ -14,5 +14,10 @@ class ComicController extends Controller
     {
         $this->comicRepository = $comicRepository;
     }
+
+    public function create()
+    {
+        return view('comic.create');
+    }
     
 }

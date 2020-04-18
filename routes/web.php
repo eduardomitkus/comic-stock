@@ -17,4 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/comic/create', 'ComicController@create');
+Route::prefix('comics')->group(function(){
+    Route::get('/create', 'ComicController@create');
+});
