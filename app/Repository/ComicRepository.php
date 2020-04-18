@@ -27,4 +27,9 @@ class ComicRepository implements ComicRepositoryInterface
         return $comic->save();
     }
 
+    public function all()
+    {
+        return $this->eloquent->all();
+    }
+
 }

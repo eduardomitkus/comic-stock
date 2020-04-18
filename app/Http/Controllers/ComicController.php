@@ -15,6 +15,12 @@ class ComicController extends Controller
         $this->comicRepository = $comicRepository;
     }
 
+    public function index()
+    {
+        $comics = $this->comicRepository->all();
+        return view('comic.index', compact('comics'));
+    }
+
     public function create()
     {
         return view('comic.create');
@@ -25,7 +31,7 @@ class ComicController extends Controller
         $comic = $request->all();
         $this->comicRepository->create($comic);
 
-        return redirect()->route('comics.create')->with('message', 'Produto cadastrado com sucesso');
+        return redirect()->route('comics.index')->with('message', 'Produto cadastrado com sucesso');
     }
     
 }

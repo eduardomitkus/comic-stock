@@ -14,11 +14,6 @@
     </div>
 @endif
 
-@if (session('message'))
-    <div class="alert alert-success">
-        {{ session('message') }}
-    </div>
-@endif
   <form class="pt-4" action="{{ route('comics.store') }}" method="POST">
     @csrf
       <div class="form-group">
