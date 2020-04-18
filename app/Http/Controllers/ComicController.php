@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ComicRequest;
 use App\Repository\ComicRepositoryInterface;
 
 class ComicController extends Controller
@@ -18,6 +18,14 @@ class ComicController extends Controller
     public function create()
     {
         return view('comic.create');
+    }
+
+    public function store(ComicRequest $request)
+    {
+        $comic = $request->all();
+        $this->comicRepository->create($comic);
+
+        return redirect()->route('comics.create')->with('message', 'Produto cadastrado com sucesso');
     }
     
 }

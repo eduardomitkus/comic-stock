@@ -13,4 +13,18 @@ class ComicRepository implements ComicRepositoryInterface
         $this->eloquent = $comic;
     }
 
+    public function newInstance()
+    {
+        return new $this->eloquent;
+    }
+
+    public function create($data)
+    {
+        $comic = $this->newInstance();
+        $comic->sku = $data['sku'];
+        $comic->name = $data['name'];
+
+        return $comic->save();
+    }
+
 }

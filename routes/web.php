@@ -18,5 +18,6 @@ Route::get('/', function () {
 });
 
 Route::prefix('comics')->group(function(){
-    Route::get('/create', 'ComicController@create');
+    Route::get('create', 'ComicController@create')->name('comics.create');
+    Route::post('', 'ComicController@store')->name('comics.store');
 });
