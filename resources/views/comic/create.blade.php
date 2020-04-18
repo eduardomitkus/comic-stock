@@ -23,11 +23,11 @@
     @csrf
       <div class="form-group">
         <label for="exampleInputEmail1">SKU</label>
-        <input type="text" class="form-control" placeholder="Digite o SKU" name="sku">
+        <input type="text" class="form-control" placeholder="Digite o SKU" name="sku" value="{{ old('sku') }}">
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Nome da HQ</label>
-        <input type="text" class="form-control" placeholder="Digite o nome da HQ" name="name">
+        <label for="exampleInputPassword1">Nome</label>
+        <input type="text" class="form-control" placeholder="Digite o nome da HQ" name="name" value="{{ old('name') }}">
       </div>    
       <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
