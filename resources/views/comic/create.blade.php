@@ -1,15 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{URL::asset('css/app.css')}}">
-</head>
-<body>
-    <div class="container">
-        <h1>Create</h1>
+@extends('default')
+@section('content')
+<div class="pt-4">
+  <div class="card">
+    <h1 class="card-body">Cadastro de Quadrinhos</h1>
+  </div>
+  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
     </div>
-</body>
-</html>
+@endif
+
+@if (session('message'))
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
+@endif
+  <form class="pt-4" action="{{ route('comics.store') }}" method="POST">
+    @csrf
+      <div class="form-group">
+        <label for="exampleInputEmail1">SKU</label>
+        <input type="text" class="form-control" placeholder="Digite o SKU" name="sku">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Nome da HQ</label>
+        <input type="text" class="form-control" placeholder="Digite o nome da HQ" name="name">
+      </div>    
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+
+
+@endsection
