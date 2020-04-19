@@ -17,7 +17,8 @@ class StockController extends Controller
 
     public function index()
     {
-        return view('stock.index');
+        $comics = $this->comicRepository->getStocked();
+        return view('stock.index', compact('comics'));
     }
 
     public function insert()
@@ -30,5 +31,11 @@ class StockController extends Controller
     {
         $this->comicRepository->setStocked($id);
         return redirect()->route('stock.index')->with('message', 'Produto adicionado ao estoque!');
+    }
+
+    public function remove($id)
+    {
+        $this->comicRepository->inactivate($id);
+        return redirect()->route('stock.index')->with('message', 'Baixa do produto realizada!');
     }
 }

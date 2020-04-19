@@ -54,13 +54,29 @@ class ComicRepository implements ComicRepositoryInterface
 
     public function getNotStocked()
     {
-        return $this->eloquent->whereIs_stocked('false')->get();
+        return $this->eloquent->whereIs_stocked(false)->get();
     }
 
     public function setStocked($id)
     {
         $comic = $this->find($id);
         $comic->is_stocked = true;
+
+        return $comic->save();
+    }
+
+    public function getStocked()
+    {
+        return $this->eloquent
+        ->whereIs_stocked(true)
+        ->whereIs_active(true)
+        ->get();
+    }
+
+    public function inactivate($id)
+    {
+        $comic = $this->find($id);
+        $comic->is_active = false;
 
         return $comic->save();
     }
