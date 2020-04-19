@@ -44,5 +44,11 @@ class ComicController extends Controller
        $this->comicRepository->update($id, $request->all());
        return redirect()->route('comics.index')->with('message', 'Produto editado com sucesso');
     }
+
+    public function destroy($id)
+    {
+        $this->comicRepository->delete($id);
+        return redirect()->route('comics.index')->with('message', 'Produto deletado com sucesso');
+    }
     
 }

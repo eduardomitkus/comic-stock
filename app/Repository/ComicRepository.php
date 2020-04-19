@@ -46,4 +46,10 @@ class ComicRepository implements ComicRepositoryInterface
         return $comic->save();
     }
 
+    public function delete($id)
+    {
+        $comic = $this->find($id);
+        return $comic->delete();
+    }
+
 }
