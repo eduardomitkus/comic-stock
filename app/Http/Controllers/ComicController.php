@@ -30,8 +30,19 @@ class ComicController extends Controller
     {
         $comic = $request->all();
         $this->comicRepository->create($comic);
-
         return redirect()->route('comics.index')->with('message', 'Produto cadastrado com sucesso');
+    }
+
+    public function edit($id)
+    {
+        $comic = $this->comicRepository->find($id);
+        return view('comic.edit', compact('comic'));
+    }
+
+    public function update($id, ComicRequest $request)
+    {
+       $this->comicRepository->update($id, $request->all());
+       return redirect()->route('comics.index')->with('message', 'Produto editado com sucesso');
     }
     
 }
