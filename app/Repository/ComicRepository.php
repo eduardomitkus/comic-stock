@@ -29,7 +29,7 @@ class ComicRepository implements ComicRepositoryInterface
 
     public function all()
     {
-        return $this->eloquent->all();
+        return $this->eloquent->whereIs_active(true)->get();
     }
 
     public function find($id)
