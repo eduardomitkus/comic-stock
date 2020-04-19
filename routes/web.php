@@ -30,4 +30,5 @@ Route::prefix('stock')->group(function(){
     Route::get('', 'StockController@index')->name('stock.index');
     Route::get('insert', 'StockController@insert')->name('stock.insert');
     Route::put('{id}/insert', 'StockController@save')->name('stock.save');
+    Route::put('{id}/low', 'StockController@remove')->name('stock.remove');
 });
