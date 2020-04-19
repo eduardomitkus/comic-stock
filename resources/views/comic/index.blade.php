@@ -18,6 +18,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">SKU</th>
                 <th scope="col">Nome</th>
+                <th scope="col">Ações</th>
           </tr>
         </thead>
 
@@ -27,6 +28,7 @@
               <th scope="row">{{ $comic->getId()}}</th>
               <td>{{ $comic->getSku()}}</td>
               <td>{{ $comic->getName()}}</td>
+              <td><a href="{{ route('comics.edit', $comic->getId())}}"><button type="button" class="btn btn-info">Editar</button></a></td>
             </tr>
         </tbody>    
         @endforeach
