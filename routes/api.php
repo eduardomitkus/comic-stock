@@ -14,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::put('adicionar-produtos', 'api\StockController@insert')->name('api.stock.insert');
+Route::put('adicionar-produtos', 'api\StockController@insert');
+Route::put('baixar-produtos', 'api\StockController@remove');

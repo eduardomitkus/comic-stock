@@ -88,7 +88,7 @@ class ComicRepository implements ComicRepositoryInterface
         ->whereIs_active(true)
         ->get();
 
-        $comics = $comics->map(function ($item, $key){
+        $comics = $comics->map(function ($item){
             $item->is_stocked = true;
             $item->save();
 
@@ -97,6 +97,24 @@ class ComicRepository implements ComicRepositoryInterface
 
         return $comics;
 
+    }
+
+    public function inactivateComics($ids)
+    {
+        $comics = $this->eloquent
+        ->whereIn('id', $ids)
+        ->whereIs_stocked(true)
+        ->whereIs_active(true)
+        ->get();
+
+        $comics = $comics->map(function ($item){
+            $item->is_active = false;
+            $item->save();
+
+            return $item;
+        });
+
+        return $comics;
     }
 
 }
