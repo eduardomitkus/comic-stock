@@ -24,4 +24,9 @@ class Comic extends Model
         return $this->name;
     }
 
+    public function isStocked()
+    {
+        return $this->is_stocked;
+    }
+
 }
