@@ -22,7 +22,7 @@ class StockController extends Controller
 
     public function insert()
     {
-        $comics = $this->comicRepository->getStocked();
+        $comics = $this->comicRepository->getNotStocked();
         return view('stock.insert', compact('comics'));
     }
 

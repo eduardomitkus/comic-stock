@@ -10,7 +10,7 @@ interface ComicRepositoryInterface
     public function find($id);
     public function update($id, $data);
     public function delete($id);
-    public function getStocked();
+    public function getNotStocked();
     public function setStocked($id);
 
 }
