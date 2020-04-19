@@ -32,4 +32,18 @@ class ComicRepository implements ComicRepositoryInterface
         return $this->eloquent->all();
     }
 
+    public function find($id)
+    {
+        return $this->eloquent->find($id);
+    }
+
+    public function update($id, $data)
+    {
+        $comic = $this->find($id);
+        $comic->sku = $data['sku'];
+        $comic->name = $data['name'];
+
+        return $comic->save();
+    }
+
 }
