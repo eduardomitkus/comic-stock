@@ -28,4 +28,5 @@ Route::prefix('comics')->group(function(){
 
 Route::prefix('stock')->group(function(){
     Route::get('', 'StockController@index')->name('stock.index');
+    Route::get('insert', 'StockController@insert')->name('stock.insert');
 });
