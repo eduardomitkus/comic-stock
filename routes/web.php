@@ -25,3 +25,7 @@ Route::prefix('comics')->group(function(){
     Route::put('{id}', 'ComicController@update')->name('comics.update');
     Route::delete('{id}', 'ComicController@destroy')->name('comics.destroy');
 });
+
+Route::prefix('stock')->group(function(){
+    Route::get('', 'StockController@index')->name('stock.index');
+});
