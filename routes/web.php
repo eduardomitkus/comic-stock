@@ -23,5 +23,4 @@ Route::prefix('comics')->group(function(){
     Route::post('', 'ComicController@store')->name('comics.store');
     Route::get('{id}/edit', 'ComicController@edit')->name('comics.edit');
     Route::put('{id}', 'ComicController@update')->name('comics.update');
-    Route::delete('{id}', 'ComicController@destroy')->name('comics.destroy');
 });
