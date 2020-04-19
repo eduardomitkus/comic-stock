@@ -14,7 +14,7 @@ class AddColumnIsStocked extends Migration
     public function up()
     {
         Schema::table('comics', function (Blueprint $table) {
-            $table->boolean('is_stocked')->nullable();
+            $table->boolean('is_stocked')->default(false);
         });
     }
 
