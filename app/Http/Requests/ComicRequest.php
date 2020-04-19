@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ComicRequest extends FormRequest
@@ -24,7 +25,7 @@ class ComicRequest extends FormRequest
     public function rules()
     {
         return [
-            'sku' => 'required|string|unique:comics,sku',
+            'sku' => [ 'required', 'string', Rule::unique('comics')->ignore($this->id) ],
             'name' => 'required|string'
         ];
     }
