@@ -18,7 +18,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">SKU</th>
                 <th scope="col">Nome</th>
-                <th scope="col">Ações</th>
+                <th style="width: 3% ;" colspan="2" scope="col">Ações</th>
           </tr>
         </thead>
 
@@ -29,6 +29,14 @@
               <td>{{ $comic->getSku()}}</td>
               <td>{{ $comic->getName()}}</td>
               <td><a href="{{ route('comics.edit', $comic->getId())}}"><button type="button" class="btn btn-info">Editar</button></a></td>
+              <td>
+                  <form action="{{ route('comics.destroy', $comic->getId())}}" method="POST">
+                    <input class="btn btn btn-outline-danger" type="submit" value="Delete" />
+                    @method('delete')
+                    @csrf
+                  </form>
+              </td>
+              {{-- <td><a href="{{ route('comics.edit', $comic->getId())}}"><button type="button" class="btn btn-outline-danger">Deletar</button></a></td> --}}
             </tr>
         </tbody>    
         @endforeach
