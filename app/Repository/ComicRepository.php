@@ -52,4 +52,17 @@ class ComicRepository implements ComicRepositoryInterface
         return $comic->delete();
     }
 
+    public function getStocked()
+    {
+        return $this->eloquent->whereIs_stocked('false')->get();
+    }
+
+    public function setStocked($id)
+    {
+        $comic = $this->find($id);
+        $comic->is_stocked = true;
+
+        return $comic->save();
+    }
+
 }
