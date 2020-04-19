@@ -81,4 +81,22 @@ class ComicRepository implements ComicRepositoryInterface
         return $comic->save();
     }
 
+    public function stockedComics($ids)
+    {
+        $comics = $this->eloquent
+        ->whereIn('id', $ids)
+        ->whereIs_active(true)
+        ->get();
+
+        $comics = $comics->map(function ($item, $key){
+            $item->is_stocked = true;
+            $item->save();
+
+            return $item;
+        });
+
+        return $comics;
+
+    }
+
 }

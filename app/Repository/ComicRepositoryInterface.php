@@ -13,5 +13,6 @@ interface ComicRepositoryInterface
     public function getNotStocked();
     public function setStocked($id);
     public function inactivate($id);
+    public function stockedComics($ids);
 
 }
