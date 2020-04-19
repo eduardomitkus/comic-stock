@@ -19,9 +19,7 @@ class StockController extends Controller
     }
 
     public function insert(Request $request)
-    {
-
-        
+    {        
 
         try {            
             $validator = $this->validateFields($request->all());
@@ -30,7 +28,7 @@ class StockController extends Controller
                 $message = 'Campo Ids não incluído ou precisa ser um array de inteiros';
                 return $this->response($message, 'error', 400);
             }
-            
+
             $comics = $this->comicRepository->stockedComics($request->input('ids'));
 
             return $this->response(
@@ -76,6 +74,7 @@ class StockController extends Controller
 
     public function validateFields($request)
     {
+        //Classe Validator é utilizada pois não foi possível capturar as mensagens na camada de validação
         $validator = Validator::make($request, [
             'ids' => 'required|array',
             'ids.*' => 'integer',
