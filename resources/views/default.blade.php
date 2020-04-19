@@ -21,9 +21,12 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('comics.create')}}">Cadastrar Comic</a>
-                </li>                
+                </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Relatório</a>
+                  <a class="nav-link" href="{{ route('stock.index') }}">Estoque</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Relatório</a>
                 </li>
               </ul>
             </div>
