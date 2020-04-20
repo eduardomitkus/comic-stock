@@ -3,7 +3,7 @@ namespace App\Repository;
 
 use App\Movement;
 
-class MovementRepository
+class MovementRepository implements MovementRepositoryInterface
 {
 
     private $eloquent;
