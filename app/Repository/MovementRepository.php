@@ -13,4 +13,18 @@ class MovementRepository implements MovementRepositoryInterface
         $this->eloquent = $movement;
     }
 
+    public function newInstance()
+    {
+        return new $this->eloquent;
+    }
+
+    public function create($data)
+    {
+        $movement = $this->newInstance();
+        $movement->timestamps = false;
+        $movement->fill($data);
+        
+        return $movement->save();
+    }
+
 }
