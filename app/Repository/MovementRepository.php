@@ -1,7 +1,8 @@
 <?php
 namespace App\Repository;
 
-use App\Movement;
+use App\Model\Movement;
+
 
 class MovementRepository implements MovementRepositoryInterface
 {
@@ -25,6 +26,11 @@ class MovementRepository implements MovementRepositoryInterface
         $movement->fill($data);
         
         return $movement->save();
+    }
+
+    public function all()
+    {
+        return $this->eloquent->all();
     }
 
 }
