@@ -15,5 +15,6 @@ interface ComicRepositoryInterface
     public function inactivate($id);
     public function stockedComics($ids);
     public function inactivateComics($ids);
+    public function isLowStock();
 
 }

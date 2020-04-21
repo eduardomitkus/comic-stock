@@ -24,8 +24,9 @@ class MovementsController extends Controller
         $movements = $this->movementRepository->all();
         $movementsGroupByDate = $movements->groupBy('date')->keys();
         $dates = $this->movementRepository->newInstance()->orderMovementsByDate($movementsGroupByDate);
+        $isLowStock = $this->comicRepository->isLowStock();
 
-        return view('movement.index', compact('dates'));
+        return view('movement.index', compact('dates', 'isLowStock'));
     }
 
     public function report(Request $request)

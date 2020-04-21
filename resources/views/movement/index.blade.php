@@ -5,6 +5,13 @@
     <div class="card">
         <h1 class="card-body">Movimentações</h1>
     </div>
+    
+    @if ($isLowStock)
+    <div class="mt-4 alert alert-danger" role="alert">
+        Estoque com poucas unidades!
+    </div>    
+    @endif
+    
 
     <ul class="pt-4 list-group">
         <li class="list-group-item bg-light">Datas</li>
