@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Repository\ComicRepository;
+use App\Repository\MovementRepository;
 use Illuminate\Support\ServiceProvider;
 use App\Repository\ComicRepositoryInterface;
+use App\Repository\MovementRepositoryInterface;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -16,6 +18,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(ComicRepositoryInterface::class, ComicRepository::class);
+        $this->app->bind(MovementRepositoryInterface::class, MovementRepository::class);
     }
 
     /**

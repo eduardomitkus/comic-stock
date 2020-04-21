@@ -32,3 +32,11 @@ Route::prefix('stock')->group(function(){
     Route::put('{id}/insert', 'StockController@save')->name('stock.save');
     Route::put('{id}/low', 'StockController@remove')->name('stock.remove');
 });
+
+
+Route::prefix('movimentacoes')->group(function(){
+    Route::get('', 'MovementsController@index')->name('movements.index');
+    Route::post('relatorio', 'MovementsController@report')->name('movements.report');
+    Route::post('estoque', 'MovementsController@stock')->name('movements.stock');
+    Route::post('baixa', 'MovementsController@removed')->name('movements.removed');
+});

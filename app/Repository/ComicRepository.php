@@ -6,6 +6,8 @@ use App\Model\Comic;
 class ComicRepository implements ComicRepositoryInterface
 {
 
+    const LOW_STOCK = 100;
+
     private $eloquent;
 
     public function __construct(Comic $comic)
@@ -115,6 +117,11 @@ class ComicRepository implements ComicRepositoryInterface
         });
 
         return $comics;
+    }
+
+    public function isLowStock()
+    {
+        return $this->getStocked()->count() < self::LOW_STOCK;
     }
 
 }
