@@ -3,7 +3,7 @@
 
 <div class="pt-4">
   <div class="card">
-    <h1 class="card-body">Estoque de Quadrinhos</h1>
+    <h1 class="card-body">Estoque de Comics</h1>
   </div>
 
   @if (session('message'))
@@ -12,7 +12,7 @@
         </div>
   @endif
 
-  <a href="{{ route('stock.insert') }}"><button type="button" class="btn btn-info mt-4">Adicionar Quadrinhos</button></a>
+  <a href="{{ route('stock.insert') }}"><button type="button" class="btn btn-info mt-4">Adicionar Comics</button></a>
 
   <table class="table mt-4">
     <thead class="thead-light">

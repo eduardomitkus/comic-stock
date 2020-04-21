@@ -3,7 +3,7 @@
 
 <div class="pt-4">
     <div class="card">
-        <h1 class="card-body">Listagem de Quadrinhos</h1>
+        <h1 class="card-body">Listagem de Comics</h1>
     </div>
 
     @if (session('message'))

@@ -2,7 +2,7 @@
 @section('content')
 <div class="pt-4">
   <div class="card">
-    <h1 class="card-body">Cadastro de Quadrinhos</h1>
+    <h1 class="card-body">Cadastro de Comics</h1>
   </div>
   @if ($errors->any())
     <div class="alert alert-danger">

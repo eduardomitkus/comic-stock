@@ -3,7 +3,7 @@
 
 <div class="pt-4">
     <div class="card">
-        <h1 class="card-body">Edição de Quadrinhos</h1>
+        <h1 class="card-body">Edição de Comics</h1>
     </div>
 </div>
 
