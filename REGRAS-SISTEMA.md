@@ -27,7 +27,10 @@
 - O aviso de estoque baixo está contido em /estoque. O aviso é gerado quando a quantidade de produtos em estoque for menor que 5 pois não foi possível realizar carga de dados.
 
 ## Login
-- Não houve tempo para fazer
+- Não foi possível fazer à tempo
+
+## Testes unitários
+- Não foi possível fazer à tempo
 
 ## Validações
 - Todas feitas
