@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "1d5dff28-794d-47f7-80f6-0f5b3e9b350d",
+		"name": "DOC API - Comic Stock",
+		"description": "# Apresentação\nEndpoints para manipulação de estoque\n\n# Autenticação\nNão é preciso utilizar autenticação para fazer requisições a esta API.\n\n# Error Codes\n**400 – Bad Request**",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "adicionar-produtos",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ids\" : [\n\t\t\n\t\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/adicionar-produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"adicionar-produtos"
+					]
+				},
+				"description": "Adiciona uma lista de comics ao estoque."
+			},
+			"response": []
+		},
+		{
+			"name": "baixar-produtos",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ids\" : []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/baixar-produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"baixar-produtos"
+					]
+				},
+				"description": "Remove uma lista de comics ao estoque."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
