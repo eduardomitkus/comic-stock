@@ -26,7 +26,7 @@
                   <a class="nav-link" href="{{ route('stock.index') }}">Estoque</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Relatório</a>
+                  <a class="nav-link" href="{{ route('movements.index')}}">Relatório</a>
                 </li>
               </ul>
             </div>

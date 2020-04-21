@@ -33,4 +33,11 @@ class MovementRepository implements MovementRepositoryInterface
         return $this->eloquent->all();
     }
 
+    public function getStockedByDate($date)
+    {
+        return $this->eloquent->where('date', $date)
+        ->where('type','add')
+        ->get();
+    }
+
 }
