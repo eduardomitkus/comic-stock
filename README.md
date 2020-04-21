@@ -1,3 +1,3 @@
 # Comic Stock
 
-Um estoque de Histórias em Quadrinhos
+Um estoque de HistÃ³rias em Comics

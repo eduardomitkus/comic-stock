@@ -19,18 +19,18 @@ Route::get('/', function () {
 
 Route::prefix('comics')->group(function(){
     Route::get('', 'ComicController@index')->name('comics.index');
-    Route::get('create', 'ComicController@create')->name('comics.create');
+    Route::get('cadastrar', 'ComicController@create')->name('comics.create');
     Route::post('', 'ComicController@store')->name('comics.store');
-    Route::get('{id}/edit', 'ComicController@edit')->name('comics.edit');
+    Route::get('{id}/editar', 'ComicController@edit')->name('comics.edit');
     Route::put('{id}', 'ComicController@update')->name('comics.update');
     Route::delete('{id}', 'ComicController@destroy')->name('comics.destroy');
 });
 
-Route::prefix('stock')->group(function(){
+Route::prefix('estoque')->group(function(){
     Route::get('', 'StockController@index')->name('stock.index');
-    Route::get('insert', 'StockController@insert')->name('stock.insert');
-    Route::put('{id}/insert', 'StockController@save')->name('stock.save');
-    Route::put('{id}/low', 'StockController@remove')->name('stock.remove');
+    Route::get('adicionar', 'StockController@insert')->name('stock.insert');
+    Route::put('{id}/adicionar', 'StockController@save')->name('stock.save');
+    Route::put('{id}/remover', 'StockController@remove')->name('stock.remove');
 });
 
 
