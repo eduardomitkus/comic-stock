@@ -9,8 +9,17 @@ Um estoque de Comics
 ## Encoding
 - UTF-8
 
+## Regras do sistema e considerações
+- `REGRAS-SISTEMA.md`
+
+## DOC APIS para Postman
+- `DOC API - Comic Stock.postman_collection.json`
+
 ## Env
-O arquivo .env-example será automaticamente copiado para .env. O .env gerado irá conter as configurações defaults para o ambiente
+- O arquivo .env-example será automaticamente copiado para .env. O .env gerado irá conter as configurações defaults para o ambiente
+
+## Migrações e Seeders
+- Estão automatizadas em `deploy.sh`
 
 ## Portas MySql
 - Por padrão é 3306
