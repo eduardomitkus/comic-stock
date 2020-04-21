@@ -38,4 +38,5 @@ Route::prefix('movimentacoes')->group(function(){
     Route::get('', 'MovementsController@index')->name('movements.index');
     Route::post('relatorio', 'MovementsController@report')->name('movements.report');
     Route::post('estoque', 'MovementsController@stock')->name('movements.stock');
+    Route::post('baixa', 'MovementsController@removed')->name('movements.removed');
 });

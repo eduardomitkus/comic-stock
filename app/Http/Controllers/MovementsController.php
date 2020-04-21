@@ -36,9 +36,19 @@ class MovementsController extends Controller
 
     public function stock(Request $request)
     {
+        $addStockType = 'add';
         $date = $request->input('date');
-        $movements = $this->movementRepository->getStockedByDate($date);
+        $movements = $this->movementRepository->getStockMovement($date, $addStockType);
 
         return view('movement.stock', compact('movements', 'date'));
+    }
+
+    public function removed(Request $request)
+    {
+        $addStockType = 'remove';
+        $date = $request->input('date');
+        $movements = $this->movementRepository->getStockMovement($date, $addStockType);
+
+        return view('movement.removed', compact('movements', 'date'));
     }
 }
