@@ -28,4 +28,9 @@ class Movement extends Model
         return $this->comic()->getName();
     }
 
+    public function getCreatedBy()
+    {
+        return $this->createad_by;
+    }
+
 }

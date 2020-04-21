@@ -20,7 +20,9 @@
         @endif
         
         @foreach ($movements as $comic)
-        <li class="list-group-item">{{ $comic->getNameComic() }}</li>
+        <li class="list-group-item"><span class="float-left">{{ $comic->getNameComic() }}</span>
+            <span class="float-right text-secondary badge badge-pill">Adição realizada por: {{ $comic->getCreatedBy()}}</span>
+        </li>
         @endforeach
       </ul>
 </div>
