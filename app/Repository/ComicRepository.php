@@ -6,7 +6,7 @@ use App\Model\Comic;
 class ComicRepository implements ComicRepositoryInterface
 {
 
-    const LOW_STOCK = 100;
+    const LOW_STOCK = 5;
 
     private $eloquent;
 
