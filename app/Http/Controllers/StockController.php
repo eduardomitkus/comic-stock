@@ -40,6 +40,9 @@ class StockController extends Controller
 
     public function remove($id)
     {
+        if($this->comicRepository->isLowStock())
+            return redirect()->route('stock.index')->with('error', 'Não é possivel remover pois há menos de 100 produtos neste estoque!');
+        
         $dataMovement = $this->dataLowMovement($id);
         $this->movementRepository->create($dataMovement);
         $this->comicRepository->inactivate($id);

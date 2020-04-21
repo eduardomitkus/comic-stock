@@ -12,6 +12,12 @@
         </div>
   @endif
 
+  @if (session('error'))
+        <div class="alert alert-success">
+            {{ session('error') }}
+        </div>
+  @endif
+
   <a href="{{ route('stock.insert') }}"><button type="button" class="btn btn-info mt-4">Adicionar Comics</button></a>
 
   <table class="table mt-4">
