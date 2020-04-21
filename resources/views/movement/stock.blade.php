@@ -7,7 +7,7 @@
     </div>    
 
     <ul class="mt-4 list-group">
-        <li class="list-group-item bg-light">Nome das Comics</li>
+        <li class="list-group-item bg-light">Comics</li>
 
         @if ($movements->isEmpty())
         <div class="mt-4 alert alert-danger" role="alert">

@@ -34,11 +34,11 @@ class MovementsController extends Controller
         return view('movement.report', compact('date'));
     }
 
-    public function info(Request $request)
+    public function stock(Request $request)
     {
         $date = $request->input('date');
         $movements = $this->movementRepository->getStockedByDate($date);
 
-        return view('movement.info', compact('movements', 'date'));
+        return view('movement.stock', compact('movements', 'date'));
     }
 }
