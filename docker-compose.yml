@@ -13,7 +13,7 @@ services:
         - MYSQL_USER=comic
         - MYSQL_PASSWORD=comic
       ports:
-        - "3306:3306"
+        - "8991:3306"
 
     webserver:
       image: nginx:alpine
