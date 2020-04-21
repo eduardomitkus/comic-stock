@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "eed11359-14b4-437f-90f8-b4b19654405e",
+		"_postman_id": "1d5dff28-794d-47f7-80f6-0f5b3e9b350d",
 		"name": "DOC API - Comic Stock",
 		"description": "# Apresentação\nEndpoints para manipulação de estoque\n\n# Autenticação\nNão é preciso utilizar autenticação para fazer requisições a esta API.\n\n# Error Codes\n**400 – Bad Request**",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -32,7 +32,7 @@
 						"adicionar-produtos"
 					]
 				},
-				"description": "Adiciona comics ao estoque"
+				"description": "Adiciona uma lista de comics ao estoque."
 			},
 			"response": []
 		},
@@ -62,7 +62,7 @@
 						"baixar-produtos"
 					]
 				},
-				"description": "Remove comics do estoque"
+				"description": "Remove uma lista de comics ao estoque."
 			},
 			"response": []
 		}
